@@ -1,4 +1,4 @@
-module.exports = ({ name, price1, price2, receiptId }) => {
+const PdfModel = ({ name, price1, price2, receiptId }) => {
     const today = new Date();
 return `
     <!doctype html>
@@ -129,3 +129,5 @@ return `
     </html>
     `;
 };
+
+module.exports = PdfModel;

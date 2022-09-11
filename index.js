@@ -1,13 +1,22 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
+const pdf = require('html-pdf');
+const bodyParser = require('body-parser');
+
+
+const app = express(); // inicia express
+
+
 require('dotenv').config();
 
 
-const personRoutes = require('./routes/personRoutes')
+const { PdfModel } = require('./models');
+
+const personRoutes = require('./routes')
+const pdfTemplate = require('./routes')
 
 
-const pdfTemplate = require("./documents");
 
 
 

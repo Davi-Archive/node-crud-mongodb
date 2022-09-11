@@ -1,2 +1,2 @@
-export * from "./Person";
-export * from "./Pdf";
+module.exports = require("./Person");
+module.exports= require("./PdfModel");
