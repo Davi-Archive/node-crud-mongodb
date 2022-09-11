@@ -1,11 +1,18 @@
-const router = require('express').Router()
+const pdfRouter = require('express').Router()
 const pdfTemplate = require('../models/')
+const pdf = require("html-pdf");
 
 
-router.get('/', (req,res)=>{
-    res.json({
-        connected: 'connected'
-    })
+
+
+pdfRouter.post('/', (req, res)=>{
+    pdf.create(pdfTemplate(req.body),{})
 })
 
-module.exports = router;
+pdfRouter.get("/", (req, res) => {
+  res.json({
+    connected: "connected PDF",
+  });
+});
+
+module.exports = pdfRouter;
