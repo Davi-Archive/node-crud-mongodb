@@ -1,5 +1,5 @@
 const personRouter = require("express").Router();
-const { Person } = require("../models");
+const Person  = require("../models/Person");
 
 //CREATE- criação
 personRouter.post("/", async (req, res) => {

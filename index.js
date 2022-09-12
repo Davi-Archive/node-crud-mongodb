@@ -7,15 +7,15 @@ const app = express(); // inicia express
 
 require("dotenv").config();
 
-const { PdfModel, Person } = require("./models");
 const { pdfRouter, personRouter } = require("./routes");
 
 
-app.use(cors())
+/* app.use(cors())
+
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json)
 //LER JSON
-
+ */
 
 
 app.use(
@@ -35,6 +35,7 @@ app.use("/pdf", pdfRouter);
 app.get("/", (req, res) => {
   res.json({ msg: "Oi express" });
 });
+
 mongoose
   .connect(process.env.DB_URI)
   .then(() => {
