@@ -1,4 +1,4 @@
-const pdfModel = require("./pdfModel");
+const PdfModel = require("./PdfModel");
 const Person = require("./Person");
 
-module.exports = { pdfModel, Person };
+module.exports = { PdfModel, Person };

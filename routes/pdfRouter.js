@@ -1,9 +1,9 @@
 const pdfRouter = require("express").Router();
-const { pdfModel } = require("../models");
+const { PdfModel } = require("../models");
 const pdf = require("html-pdf");
 
 pdfRouter.post("/", (req, res) => {
-  pdf.create(pdfModel(req.body), {}).toFile(`${__dirname}/result.pdf`, (err) => {
+  pdf.create(PdfModel(req.body), {}).toFile(`${__dirname}/result.pdf`, (err) => {
    console.log(req.body);
     if (err) {
       res.send(Promise.reject());
